@@ -1,0 +1,7 @@
+StruckDown
+
+Main Goals
+    * Readable in plaintext
+    * Parsable by program
+
+

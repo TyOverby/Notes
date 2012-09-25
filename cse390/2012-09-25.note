@@ -1,0 +1,74 @@
+Assignments:
+    Bring to class next week
+        * Name
+        * Email address
+        * Year (1,2,3,4)
+        * Major
+        * Hometown
+        * Interesting fact, what I did over break
+Important
+    ssh tyoverby@attu.cs.washington.edu
+
+Notes
+    Operating Systems
+        What is an operating system?
+            * Manages activities and resources
+            * software that acts as an interface between hardware and user
+            * provides a layer of abstraction for application deelopers
+        Features provided by an OS
+            * Ability to execute programs
+            * Memory management
+            * File systems, disk and network access
+            * An interface to communicate with hardware
+            * A user interface
+        Kernel
+            * The lowest-level core of an os
+    Unix/Linux
+        Brief history
+            * Multics (1964) for mainframes
+            * Unix ((1969)
+            * K&R
+            * Linus Torvalds and Linux (1992)
+        Key Unix ideas:
+            * Written in a high-level language (C)
+            * Virtual memory
+            * Hierarchical file systems; "everything is a file"
+            * Lots of small programs that work together to solve larger problems
+            * Security, users, access, and groups
+            * Human-readable documentation included
+        Linux
+            * A kernel for a Unix-like operating systems
+            * Commonly seen/used today in servers, mobile/embedded devices
+        GNU
+            * A "free software" implementation of many unix-like tools
+            * Many GNU tools are distributed with the Linux kernel
+        Distribution
+            * A prepackaged set of Linux software
+            * Examples
+                * Ubuntu
+                * Fedora
+        Key features
+            * Open source software
+            * Free to user
+            * Constantly developed
+    Features of Linux
+        * X-Windows
+        * Window managers
+        * Desktop environments
+            * Gnome
+            * KDE
+    Shell
+        - An interactive program that uses user input to
+        manage the execution of other programs
+
+        Why would I learn to use a shell when GUIs exist?
+            * Faster
+            * Work remotely
+            * Programmable
+            * Customizable
+            * Repeatable
+
+    Streams
+        * Input  (users keyboard)
+        * Output (to screen)
+        * Error  (sometimes to screen)
