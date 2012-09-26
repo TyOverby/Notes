@@ -1,3 +1,5 @@
 #! /bin/bash
 
-touch $(date +%Y-%m-%d).note
+filename=$(date +%Y-%m-%d).note
+
+echo "Ty Overby \n Notes" > filename
