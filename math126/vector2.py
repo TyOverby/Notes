@@ -1,5 +1,3 @@
-import re
-import os
 import math
 
 class Vector2(object):
@@ -64,10 +62,13 @@ class Vector2(object):
     def __neg__(self, other):
         return Vector2(-self.x, -self.y)
 
-    def __ror__(self, other):
-        return self.magnitude
     def __or__(self, other):
-        pass
+        return self.magnitude
+    def __ror__(self,other):
+        return self.magnitude
+
+    def dot(v1, v2):
+        return v1.x*v2.x + v1.y*v2.y
 
     __iadd__ = __setattr__
     __isub__ = __setattr__
