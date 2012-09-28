@@ -2,6 +2,46 @@ import re
 import os
 import math
 
+class vector2:
+    def __init__(self, x, y):
+        self.x = x;
+        self.wrapped = True
+        self.y = y;
+
+    def __str__(self):
+        return "<"+str(self.x)+", "+str(self.y)+">"
+
+    def __repr__(self):
+        return str(self)
+
+    def __setattr__(self, name, value):
+        try:
+            if(self.wrapped):
+                return
+        except NameError:
+            self.name = value
+
+
+    def __getitem__(self, key):
+        if key is 0:
+            return self.x
+        elif key is 1:
+            return self.y
+        elif key is "x":
+            return self.x
+        elif key is "y":
+            return self.y
+    def __len__(self):
+        return 2
+
+def vector_from_polar(theta, rho):
+    if theta < -360 or theta > 360:
+        theta = theta % 360
+    if theta < 0:
+        theta = 360 + theta
+
+    return
+
 def distance(vec1, vec2):
     deltax = vec1[0] - vec2[0]
     deltay = vec1[1] - vec2[1]
@@ -24,7 +64,8 @@ def distance_sub(vec1=None):
     if vec1 == None:
         print distance(get_vector("Enter First Vector: "), get_vector("Enter Second Vector: "))
 
-def main_switch(text = raw_input("Enter a command: ")):
+def main_switch():
+    text = raw_input("Enter a command: ")
     if "dist" in text:
         distance_sub();
         if "+" in text:
@@ -35,5 +76,5 @@ def main_switch(text = raw_input("Enter a command: ")):
         print "Command not found.  Quitting"
         os._exit(1)
 
-main_switch()
-os._exit(0)
+#main_switch()
+#os._exit(0)
