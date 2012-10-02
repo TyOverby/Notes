@@ -20,7 +20,7 @@ class Vector2(object):
         elif name is "mag2":
             return self.x*self.x + self.y*self.y
         elif name is "theta":
-            theta = math.degrees(math.atan2(self.x,self.y))
+            theta = math.degrees(math.atan2(self.y,self.x))
             if theta < -360 or theta > 360:
                 theta = theta % 360
             if theta < 0:

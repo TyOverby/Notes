@@ -14,7 +14,7 @@ def v(*args):
         raise TypeError("Two and three dimensional vectors are all that is supported")
 
 def t(theta, length = 1, deg=True):
-    if not deg
+    if not deg:
         theta = math.degrees(theta)
 
     if theta < -360 or theta > 360:
