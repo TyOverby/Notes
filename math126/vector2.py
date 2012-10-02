@@ -2,8 +2,22 @@ import math
 
 class Vector2(object):
     def __init__(self, x, y):
-        super(Vector2, self).__setattr__('x', x)
-        super(Vector2, self).__setattr__('y', y)
+        def setval(name, value):
+            super(Vector2, self).__setattr__(name, value)
+        setval('x',x)
+        setval('y',y)
+
+        mag2 = self.x*self.x + self.y*self.y
+
+        theta = math.degrees(math.atan2(self.y,self.x))
+        if theta < -360 or theta > 360:
+            theta = theta % 360
+        if theta < 0:
+            theta = 360 + theta
+
+        setval('mag2',mag2)
+        setval('mag', math.sqrt(mag2))
+        setval('theta',theta)
 
     def __str__(self):
         return "<"+str(self.x)+", "+str(self.y)+">"
@@ -13,21 +27,6 @@ class Vector2(object):
 
     def __setattr__(self, *args):
         raise TypeError("Can't modify immutable vector")
-
-    def __getattr__(self, name):
-        if name in ["magnitude", "mag", "rho"]:
-            return math.sqrt(self.mag2)
-        elif name is "mag2":
-            return self.x*self.x + self.y*self.y
-        elif name is "theta":
-            theta = math.degrees(math.atan2(self.y,self.x))
-            if theta < -360 or theta > 360:
-                theta = theta % 360
-            if theta < 0:
-                theta = 360 + theta
-            return theta
-        else:
-            return super(Vector2, self).__getattr__(name)
 
     __delattr__ = __setattr__
 

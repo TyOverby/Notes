@@ -4,9 +4,16 @@ import math
 
 class Vector3(object):
     def __init__(self, x, y, z):
-        super(Vector3, self).__setattr__('x', x)
-        super(Vector3, self).__setattr__('y', y)
-        super(Vector3, self).__setattr__('z', z)
+        def setval(name, value):
+            super(Vector3, self).__setattr__(name, value)
+
+        setval('x',x)
+        setval('y',y)
+        setval('z',z)
+
+        mag2 = self.x*self.x + self.y*self.y + self.z*self.z
+        setval('mag2',mag2)
+        setval('mag',math.sqrt(mag2))
 
     def __str__(self):
         return "<"+str(self.x)+", "+str(self.y)+", "+str(self.z)+">"
@@ -16,14 +23,6 @@ class Vector3(object):
 
     def __setattr__(self, *args):
         raise TypeError("Can't modify immutable vector")
-
-    def __getattr__(self, name):
-        if name in ["magnitude", "mag", "rho"]:
-            return math.sqrt(self.mag2)
-        elif name is "mag2":
-            return self.x*self.x + self.y*self.y + self.z*self.z
-        else:
-            return super(Vector2, self).__getattr__(name)
 
     __delattr__ = __setattr__
 
