@@ -73,6 +73,9 @@ class Vector3(object):
     def cross(v1, v2):
         return Vector3(v1.y * v2.z - v1.z * v2.y,    v1.z * v2.x - v1.x * v2.z,    v1.x * v2.y - v1.y*v2.x)
 
+    def to(self, other):
+        return other-self
+
     __iadd__ = __setattr__
     __isub__ = __setattr__
     __imul__ = __setattr__

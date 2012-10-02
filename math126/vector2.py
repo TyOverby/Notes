@@ -70,6 +70,9 @@ class Vector2(object):
     def dot(v1, v2):
         return v1.x*v2.x + v1.y*v2.y
 
+    def to(self, other):
+        return other-self
+
     __iadd__ = __setattr__
     __isub__ = __setattr__
     __imul__ = __setattr__
