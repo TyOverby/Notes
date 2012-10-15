@@ -13,7 +13,8 @@ def v(*args):
     else:
         raise TypeError("Two and three dimensional vectors are all that is supported")
 
-def t(theta, length = 1, deg=True):
+def t(rho=1, theta=0, deg=False):
+
     if not deg:
         theta = math.degrees(theta)
 
@@ -22,7 +23,7 @@ def t(theta, length = 1, deg=True):
     if theta < 0:
         theta = 360 + theta
 
-    x = length * (math.cos(math.radians(theta)))
-    y = length * (math.sin(math.radians(theta)))
+    x = rho * (math.cos(math.radians(theta)))
+    y = rho * (math.sin(math.radians(theta)))
 
     return Vector2(x,y)
