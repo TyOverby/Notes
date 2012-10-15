@@ -75,6 +75,9 @@ class Vector3(object):
     def to(self, other):
         return other-self
 
+    def angle(self, other):
+        return math.degrees(math.acos(self.dot(other) / (self.mag * other.mag)))
+
     __iadd__ = __setattr__
     __isub__ = __setattr__
     __imul__ = __setattr__
